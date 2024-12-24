@@ -20,18 +20,10 @@ class Shop
         $this->products[] = $product;
     }
 
-    public function get() {}
-
     public function getName() {
         return $this->name;
     }
-    public function setName($name) {
-        $this->name = $name;
-    }
     public function getAddress() {
         return $this->address;
-    }
-    public function setAddress($address) {
-        $this->address = $address;
     }
 }

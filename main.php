@@ -5,39 +5,18 @@ use App\Shop;
 
 require_once "App/Shop.php";
 require_once "App/Product.php";
-require_once "App/StoreConstructor.php";
+require_once "App/StoreFactory.php";
+require_once "App/ProductFactory.php";
 
-// Магазин
-$nameShop = null;
-$address = null;
+$storeFactory = new \App\StoreFactory();
 
-// Продукт
-$id = null;
-$nameProduct = null;
-$price = null;
+$shop = $storeFactory->creatingAShop();
 
-$storeConstructor = new \App\StoreConstructor();
+$productFactory = new \App\ProductFactory();
 
-$storeConstructor->creatingAStore();
+$product = $productFactory->createAProduct();
 
-/*
-echo "Вы хотите создать новый товар? (Д/Н)";
-$answer = trim(fgetc(STDIN));
-if ($answer == 'Д') {
-    echo "Конструктор товара";
-    echo "Введите id продукта: ";
-    $id = (int)trim(fgets(STDIN));
-    echo "Введите название продукта: ";
-    $nameProduct = trim(fgets(STDIN));
-    echo "Введите цену продукта: ";
-    $price = (int)trim(fgets(STDIN));
-    echo "Товар" . $nameProduct . "успешно создан";
-} else if ($answer == 'Н') {
-    echo "Выход из программы";
-    exit();
-}
-
-*/
-$shop = new Shop();
-$product = new Product();
 $shop->addProducts($product);
+
+var_dump($shop);
+var_dump($product);

@@ -5,12 +5,12 @@ use App\Shop;
 
 require_once "App/Shop.php";
 require_once "App/Product.php";
-require_once "App/StoreFactory.php";
+require_once "App/ShopFactory.php";
 require_once "App/ProductFactory.php";
 
-$storeFactory = new \App\StoreFactory();
+$ShopFactory = new \App\ShopFactory();
 
-$shop = $storeFactory->creatingAShop();
+$shop = $ShopFactory->creatingAShop();
 
 $productFactory = new \App\ProductFactory();
 

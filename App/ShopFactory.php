@@ -2,7 +2,7 @@
 
 namespace App;
 
-class StoreFactory
+class ShopFactory
 {
     public function creatingAShop(): Shop {
         while (true) {
@@ -12,8 +12,11 @@ class StoreFactory
 
             if ($answer === 'д') {
                 echo "Создание магазина\n";
-
-                return new Shop('Страпонята', 'Гаврилово 21' );
+                echo "Введите название магазина\n";
+                $name = trim(fgets(STDIN));
+                echo "Введите адрес магазина\n";
+                $address = trim(fgets(STDIN));
+                return new Shop($name, $address);
             } else if ($answer === 'н') {
                 echo "Выход из программы\n";
                 die();
